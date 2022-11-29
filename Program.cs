@@ -12,7 +12,9 @@ namespace Heist
             int numOfMembers = 0;
             List<TeamMember> Members = new List<TeamMember>();
             int TeamSkillLevel = 0;
-            int BankDifficulty = 100;
+            Random rnd = new Random();
+            int luck = rnd.Next(-10, 10);
+            int BankDifficulty = 100 + luck;
 
             while (Alias != "")
             {
@@ -45,6 +47,7 @@ namespace Heist
                 TeamSkillLevel += Member.SkillLevel;
             }
             Console.WriteLine(TeamSkillLevel);
+            Console.WriteLine(BankDifficulty);
             if (TeamSkillLevel > BankDifficulty)
             {
                 Console.WriteLine("Success!");
