@@ -21,8 +21,8 @@ namespace Heist
 
 
             List<TeamMember> Members = new List<TeamMember>();
-
             Members.Add(Member1);
+
 
 
 
