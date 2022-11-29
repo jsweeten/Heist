@@ -41,13 +41,14 @@ namespace Heist
                 numOfMembers++;
             }
             Console.WriteLine($"There are {numOfMembers}");
+            Console.WriteLine("How many times would you like to try?");
 
             foreach (TeamMember Member in Members)
             {
                 TeamSkillLevel += Member.SkillLevel;
             }
-            Console.WriteLine(TeamSkillLevel);
-            Console.WriteLine(BankDifficulty);
+            Console.WriteLine("Team Skill Level: " + TeamSkillLevel);
+            Console.WriteLine("Bank Difficulty Level: " + BankDifficulty);
             if (TeamSkillLevel > BankDifficulty)
             {
                 Console.WriteLine("Success!");
