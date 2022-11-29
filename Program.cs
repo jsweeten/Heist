@@ -7,25 +7,37 @@ namespace Heist
     {
         static void Main(string[] args)
         {
+            string Alias = "member";
+            int numOfMembers = 0;
+            List<TeamMember> Members = new List<TeamMember>();
+            while (Alias != "")
+            {
+
             Console.WriteLine("Plan your heist!");
             Console.WriteLine("----------------");
             Console.WriteLine("Please enter your criminal alias:");
-            string Alias = Console.ReadLine();
+            Alias = Console.ReadLine();
+            if (Alias == "") {
+                break;
+            }
             Console.WriteLine("Enter your level of skill:");
             string Skill = Console.ReadLine();
             Console.WriteLine("What is your team member's courage factor (0.0 - 2.0)?");
             string Courage = Console.ReadLine();
 
-            TeamMember Member1 = new TeamMember(Alias, int.Parse(Skill), double.Parse(Courage));
-            Console.WriteLine(Member1.Name + " " + Member1.SkillLevel + " " + Member1.CourageFactor);
-
-
-            List<TeamMember> Members = new List<TeamMember>();
-
-            Members.Add(Member1);
+            TeamMember Member = new TeamMember(Alias, int.Parse(Skill), double.Parse(Courage));
+            Console.WriteLine(Member.Name + " " + Member.SkillLevel + " " + Member.CourageFactor);
 
 
 
+            Members.Add(Member);
+            numOfMembers++;
+            }
+            Console.WriteLine($"There are {numOfMembers}");
+            foreach (TeamMember Member in Members)
+                {
+                    Console.WriteLine($"Name: {Member.Name}\n Skill Level: {Member.SkillLevel}\n Courage Factor: {Member.CourageFactor}" );
+                }
         }
     }
 }
