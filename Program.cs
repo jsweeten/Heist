@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Heist
 {
@@ -17,6 +18,14 @@ namespace Heist
 
             TeamMember Member1 = new TeamMember(Alias, int.Parse(Skill), double.Parse(Courage));
             Console.WriteLine(Member1.Name + " " + Member1.SkillLevel + " " + Member1.CourageFactor);
+
+
+            List<TeamMember> Members = new List<TeamMember>();
+
+            Members.Add(Member1);
+
+
+
         }
     }
 }
