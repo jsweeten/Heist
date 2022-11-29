@@ -5,11 +5,15 @@ namespace Heist
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             string Alias = "member";
             int numOfMembers = 0;
             List<TeamMember> Members = new List<TeamMember>();
+            int TeamSkillLevel = 0;
+            int BankDifficulty = 100;
+
             while (Alias != "")
             {
 
@@ -35,10 +39,24 @@ namespace Heist
                 numOfMembers++;
             }
             Console.WriteLine($"There are {numOfMembers}");
+
             foreach (TeamMember Member in Members)
             {
-                Console.WriteLine($"Name: {Member.Name}\n Skill Level: {Member.SkillLevel}\n Courage Factor: {Member.CourageFactor}");
+                TeamSkillLevel += Member.SkillLevel;
             }
+            Console.WriteLine(TeamSkillLevel);
+            if (TeamSkillLevel > BankDifficulty)
+            {
+                Console.WriteLine("Success!");
+            }
+            else
+            {
+                Console.WriteLine("JAIL");
+            }
+            // foreach (TeamMember Member in Members)
+            //     {
+            //         Console.WriteLine($"Name: {Member.Name}\n Skill Level: {Member.SkillLevel}\n Courage Factor: {Member.CourageFactor}" );
+            //     }
         }
     }
 }
