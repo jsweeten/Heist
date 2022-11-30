@@ -13,13 +13,15 @@ namespace Heist
             List<TeamMember> Members = new List<TeamMember>();
             int TeamSkillLevel = 0;
 
+            Console.WriteLine("Plan your heist!");
+            Console.WriteLine("----------------");
+            Console.WriteLine("Bank Difficulty?");
+            int BankDifficulty = int.Parse(Console.ReadLine());
 
 
             while (Alias != "")
             {
 
-                Console.WriteLine("Plan your heist!");
-                Console.WriteLine("----------------");
                 Console.WriteLine("Please enter your criminal alias:");
                 Alias = Console.ReadLine();
                 if (Alias == "")
@@ -50,28 +52,33 @@ namespace Heist
                 TeamSkillLevel += Member.SkillLevel;
             };
 
+            int SuccessCount = 0;
+            int JailCount = 0;
             for (int i = 0; i < Trials; i++)
-                {
-            Console.WriteLine("Your Crew's Skill Level: " + TeamSkillLevel);
-            Random rnd = new Random();
-            int luck = rnd.Next(-10, 10);
-            int BankDifficulty = 100 + luck;
-            Console.WriteLine("Bank Difficulty Level: " + BankDifficulty);
-            Console.WriteLine();
-            Console.WriteLine("-----------");
-            Console.WriteLine();
+            {
+                Console.WriteLine("Your Crew's Skill Level: " + TeamSkillLevel);
+                Random rnd = new Random();
+                int luck = rnd.Next(-10, 10);
+                BankDifficulty += luck;
+                Console.WriteLine("Bank Difficulty Level: " + BankDifficulty);
+                Console.WriteLine();
+                Console.WriteLine("-----------");
+                Console.WriteLine();
 
-            if (TeamSkillLevel > BankDifficulty)
-            {
-                Console.WriteLine("Your Crew Got Away! Success!");
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("Go directly to JAIL. Do not pass go, do not collect $200.");
-                Console.WriteLine();
-            }
+                if (TeamSkillLevel > BankDifficulty)
+                {
+                    Console.WriteLine("Your Crew Got Away! Success!");
+                    Console.WriteLine();
+                    SuccessCount++;
+                }
+                else
+                {
+                    Console.WriteLine("Go directly to JAIL. Do not pass go, do not collect $200.");
+                    Console.WriteLine();
+                    JailCount++;
+                }
             };
+            Console.WriteLine($"Successful runs: {SuccessCount}\n Failed runs: {JailCount}");
             // foreach (TeamMember Member in Members)
             //     {
             //         Console.WriteLine($"Name: {Member.Name}\n Skill Level: {Member.SkillLevel}\n Courage Factor: {Member.CourageFactor}" );
