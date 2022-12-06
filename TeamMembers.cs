@@ -17,6 +17,4 @@ namespace Heist
             CourageFactor = courageFactor;
         }
     }
-
-
 };
