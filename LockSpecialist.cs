@@ -4,9 +4,9 @@ namespace Heist
 {
     public class LockSpecialist : IRobber
     {
-        public string Name { get; }
-        public int SkillLevel { get; }
-        public int PercentageCut { get; }
+        public string Name { get; set;}
+        public int SkillLevel { get; set;}
+        public int PercentageCut { get; set; }
         public void PerformSkill(Bank bank)
         {
             bank.VaultScore -= SkillLevel;

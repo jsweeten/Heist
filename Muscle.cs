@@ -4,16 +4,16 @@ namespace Heist
 {
     public class Muscle : IRobber
     {
-        public string Name { get; }
-        public int SkillLevel { get; }
-        public int PercentageCut { get; }
+        public string Name { get; set; }
+        public int SkillLevel { get; set;}
+        public int PercentageCut { get; set;}
         public void PerformSkill(Bank bank)
         {
             bank.SecurityGuardScore -= SkillLevel;
             Console.WriteLine($"{Name} is using their big muscles to disable the bank guards. Decreased vault score by {SkillLevel} points.");
-            if (bank.VaultScore < 0)
+            if (bank.SecurityGuardScore < 0)
             {
-                Console.WriteLine($"{Name} has cracked the lock!");
+                Console.WriteLine($"{Name} has hogtied the guards!");
             }
         }
     }

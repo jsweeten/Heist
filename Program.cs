@@ -5,19 +5,69 @@ namespace Heist
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             string Alias = "member";
             int numOfMembers = 0;
+
+            Hacker Hacker1 = new Hacker
+            {
+                Name = "Jack Ryan",
+                SkillLevel = 51,
+                PercentageCut = 18
+            };
+            Muscle Muscle1 = new Muscle
+            {
+                Name = "Dwayne Johnson",
+                SkillLevel = 51,
+                PercentageCut = 18
+            };
+            LockSpecialist LockSpecialist1 = new LockSpecialist
+            {
+                Name = "Angus 'Mac' MacGyver",
+                SkillLevel = 51,
+                PercentageCut = 18
+            };
+            Hacker Hacker2 = new Hacker
+            {
+                Name = "Anon",
+                SkillLevel = 51,
+                PercentageCut = 18
+            };
+            Muscle Muscle2 = new Muscle
+            {
+                Name = "Jason Bourne",
+                SkillLevel = 51,
+                PercentageCut = 18
+            };
+            LockSpecialist LockSpecialist2 = new LockSpecialist
+            {
+                Name = "Mr. T",
+                SkillLevel = 51,
+                PercentageCut = 18
+            };
+
             List<IRobber> rolodex = new List<IRobber>();
-            int TeamSkillLevel = 0;
 
-            Console.WriteLine("Plan your heist!");
+            Console.WriteLine("Welcome to Bank Heist Simulator!");
+            Console.WriteLine("");
+            Console.WriteLine("It's just like robbing a REAL bank!");
+            Console.WriteLine("");
             Console.WriteLine("----------------");
-            Console.WriteLine("Bank Difficulty?");
-            int BankDifficulty = int.Parse(Console.ReadLine());
+            Console.WriteLine("Your crew consists of:");
+            Console.WriteLine("");
+            foreach (IRobber member in rolodex)
+            {
+                Console.Write($@"
+                    {Hacker1.Name}/n
+                    Skill Level: {Hacker1.SkillLevel}/n
+                    Percentage Cut: {Hacker1.PercentageCut}/n
+                    ");
+                Console.WriteLine("");
+            }
 
+
+            int BankDifficulty = int.Parse(Console.ReadLine());
 
             while (Alias != "")
             {
