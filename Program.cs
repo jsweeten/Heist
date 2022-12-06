@@ -10,7 +10,7 @@ namespace Heist
         {
             string Alias = "member";
             int numOfMembers = 0;
-            List<TeamMember> Members = new List<TeamMember>();
+            List<IRobber> rolodex = new List<IRobber>();
             int TeamSkillLevel = 0;
 
             Console.WriteLine("Plan your heist!");

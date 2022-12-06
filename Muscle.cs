@@ -9,8 +9,8 @@ namespace Heist
         public int PercentageCut { get; }
         public void PerformSkill(Bank bank)
         {
-            bank.VaultScore -= SkillLevel;
-            Console.WriteLine($"{Name} is using their golden toothpick to disable the vault lock. Decreased vault score by 50 points.");
+            bank.SecurityGuardScore -= SkillLevel;
+            Console.WriteLine($"{Name} is using their big muscles to disable the bank guards. Decreased vault score by {SkillLevel} points.");
             if (bank.VaultScore < 0)
             {
                 Console.WriteLine($"{Name} has cracked the lock!");
